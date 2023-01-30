@@ -1,0 +1,13 @@
+Avoid- for loop var use only pure function recursion maintain time complexity
+1. "abbbaaccccee" -- get second highest no - b=3 - Done
+2. "ababcdefafe" ,"aaa" , "abb"-- highest palindrome- efafe 2- a -3 bb
+3. "akash" = replace the charcter with new char - @k@sh-Done
+4. "abcdefg" = count word = a=1,b=1 -Done
+5.  List(1,2,3,4,5) = sum= 15 - Done
+6. List(1,2,3,4,5,1,2,3,4,5) = remove duplicate elem - Done
+7. List(1,6,8,2,3) = get first second third highest elem - Done
+8. create a list using range- 1 to 10
+9. List(Future(1),Future(2))= Future(3) -- Done
+10. List("a","b","c") = is list contain element -- Done
+11.Input: List('a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e')
+  Output: List('a', 'b', 'c', 'a', 'd', 'e')
