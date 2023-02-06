@@ -382,3 +382,170 @@ object DemoApp extends  App {
 
 	println(getHighestChar(str5,""))
 }
+
+
+
+// val str = "nitinl"
+
+// def isPalindrome(str: String, acc: Boolean): Boolean = {
+
+//   str match {
+//     case s if s.isEmpty => acc
+//     case s => if(s.head == s.last) isPalindrome(s.tail.dropRight(1),true) else acc 
+//   }
+// }
+
+// val count = str.groupBy(e => e).map(c => (c._1, c._2.length()))
+
+// println(count)
+
+// def findChar(str: String,c: Char, acc: Boolean): Boolean = {
+
+//   str match {
+//     case s if s.isEmpty => acc
+//     case s => if(s.head == c) true else findChar(s.tail,c,false)
+//   }
+// }
+
+// println(findChar(str,'n',false))
+
+// def replace(str: String,c: Char, acc: String): String  = {
+
+//   str match {
+//     case s if s.isEmpty => acc
+//     case s => if(s.head == c) replace(s.tail,c,acc + '@') else replace(s.tail,c,acc + s.head)
+//   }
+// }
+
+// def countSpecial(str: String,c: Char, acc: Int): Int  = {
+
+//   str match {
+//     case s if s.isEmpty => acc
+//     case s => if(s.head == c) countSpecial(s.tail,c,acc + 1) else countSpecial(s.tail,c,acc )
+//   }
+// }
+// println(replace(str,'n',""))
+
+// println(countSpecial(str,'n',0))
+// println(isPalindrome(str,false))
+
+// def sumList(ls: List[Int],acc:Int):Int = {
+
+//   ls match {
+
+//     case Nil => acc
+//     case h::t => sumList(t,acc+h)
+//   }
+// }
+
+// println(sumList(List(1,2,4,5),0))
+
+// import  scala.concurrent._
+// import  scala.concurrent.ExecutionContext.Implicits.global
+
+
+// val list = List(Future(2), Future(4), Future(1))
+
+// val res = Future.sequence(list).map(e => e.fold(0)(_ + _))
+
+// println(res.onComplete(println))
+
+
+// val list2 = List(1,2,4,5)
+
+// def reverseList(ls : List[Int], acc: List[Int]) : List[Int] = {
+
+//   ls match {
+//     case  Nil => acc
+//     case h:: tail => reverseList(tail,h :: acc)
+//   }
+// }
+// def reverseStr(ls : String, acc:String) : String = {
+
+//   ls match {
+//     case  s if s.isEmpty() => acc
+//     case s => reverseStr(s.tail,s.head + acc)
+//   }
+// }
+// println(reverseList(list2,List()))
+// println(reverseStr(str,""))
+// println(list2 :+ 3)
+// println(2 :: list2)
+// println(list2 ::: List(6))
+
+
+// val f =  List(Future(1), Future{Thread.sleep(100); 4}, Future(5))
+// import concurrent.duration.DurationInt
+// val res4 = Future.sequence(f).map(s => s.fold(0)(_ + _))
+//                                   val s = Await.result(res4, 2.seconds)
+// print(s)
+
+
+//second largest in a list
+
+// val ls = List(1,4,5,3,6,7)
+
+// def secondLargest(xs: List[Int],acc: Int,secondLar: Int) : Int = {
+
+// xs match {
+
+// case Nil => secondLar
+//   case h::t => if(h > acc ) secondLargest(t,h,acc) else secondLargest(t,acc,h)
+// }
+// }
+
+// def thirdLargest(xs: List[Int],acc: Int,secondLar: Int,thirdLarge: Int) : Int = {
+
+// xs match {
+
+// case Nil => thirdLarge
+//   case h::t => if(h > acc && h > secondLar ) {
+//     if(acc > secondLar){
+//       thirdLargest(t,h,acc,secondLar)
+//     }
+//     else{
+//     thirdLargest(t,h,secondLar,acc)
+//     }
+//   }  
+//   else {
+//     if ( acc > secondLar) {
+//     thirdLargest(t,acc,secondLar,h)
+//     }
+//     else {
+//       thirdLargest(t,secondLar,acc,h)
+//     }
+//   }
+// }
+// }
+
+// println(thirdLargest(ls,0,0,0))
+
+
+
+
+// val str = "akash"
+
+// val res1 = str.substring(0,1)
+// val res2 = str.substring(1,str.length())
+
+// val res3 = res1 + res2.capitalize
+
+
+// println(res3)
+
+
+// val str2 = "Hello world"
+
+// val res5 = str2.split(" ")
+
+// val res6 = res5(0).toLowerCase() + " " + res5(1).capitalize
+// println(res6)
+
+
+val str = "aaabbccdd"
+
+val res = str.groupBy(identity).map{c => (c._1,c._2.length()) match {
+  case (ch,size) => s"$ch$size"
+}}.mkString
+
+println(res)
